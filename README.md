@@ -4,8 +4,10 @@ This project is intended to illustrate a creative process, to challenge assumpti
 
 The code is part of the narrative.
 
-example
+Usage:
 
+from terminal, as text ui 
 ```ruby iching.rb "ask your question here, typing helps focus"```
 
+or run sinatra and provide text web ui
 ```ruby pu.rb -o 0.0.0.0 ```
