@@ -13,4 +13,4 @@ or run sinatra and provide text web ui
 ```ruby pu.rb -o 0.0.0.0 ```
 
 to run from docker
- docker run -it --rm --name iching -v "$PWD":/usr/src/myapp -w /usr/src/myapp ruby:2.6.6-slim ruby iching.rb
+```docker run -it --rm --name iching -v "$PWD":/usr/src/myapp -w /usr/src/myapp ruby:2.6.6-slim ruby iching.rb```
