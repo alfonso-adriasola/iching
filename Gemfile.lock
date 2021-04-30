@@ -10,7 +10,7 @@ GEM
     rack-protection (2.1.0)
       rack
     rake (13.0.3)
-    rexml (3.2.4)
+    rexml (3.2.5)
     ruby2_keywords (0.0.2)
     sinatra (2.1.0)
       mustermann (~> 1.0)
