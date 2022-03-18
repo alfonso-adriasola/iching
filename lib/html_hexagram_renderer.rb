@@ -1,9 +1,6 @@
 require_relative "./hexagram_renderer.rb"
-class HtmlHexagramRenderer < HexagramRenderer
-  def self.out(reading1, reading2)
-    "#{reading1} \n #{reading2}"
-  end
 
+class HtmlHexagramRenderer < HexagramRenderer
   def do(hexagram: [], first: true)
     out = []
     out += make_line_art(hexagram) if first
@@ -11,23 +8,26 @@ class HtmlHexagramRenderer < HexagramRenderer
     out.join("\n")
   end
 
+  MAP =
+    {
+      9 => '---ooo---',
+      8 => '---   ---',
+      7 => '---------',
+      6 => '---xxx---'
+    }
+
   def make_line_art(hexagram = Array.new(7, 7))
     i = -1
     hexagram.reverse.map do |l|
       line = "<pre>"
-      line << case l.to_i
-      when 9
-        "---ooo---"
-      when 8
-        "---   ---"
-      when 7
-        "---------"
-      when 6
-        "---xxx---"
-      end
+      line << MAP[l]
       i += 1
       line << " #{6 - i}</pre>"
     end
+  end
+
+  def self.out(reading1, reading2)
+    "#{reading1} \n #{reading2}"
   end
 
   def render_file(linkaddr)
