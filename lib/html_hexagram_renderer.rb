@@ -8,14 +8,6 @@ class HtmlHexagramRenderer < HexagramRenderer
     out.join("\n")
   end
 
-  MAP =
-    {
-      9 => '---ooo---',
-      8 => '---   ---',
-      7 => '---------',
-      6 => '---xxx---'
-    }
-
   def make_line_art(hexagram = Array.new(7, 7))
     i = -1
     hexagram.reverse.map do |l|

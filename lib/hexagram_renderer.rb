@@ -1,26 +1,24 @@
 class HexagramRenderer
-  def self.out(reading1, reading2)
-  end
-
   def do(hexagram: [], first: true)
     make_line_art(hexagram) if first
     render_hexagram(hexagram)
   end
 
+  def self.out(reading1, reading2) end
+
+  MAP =
+    {
+      9 => '---ooo---',
+      8 => '---   ---',
+      7 => '---------',
+      6 => '---xxx---'
+    }
+
   def make_line_art(hexagram)
     art = hexagram.reverse.map do |l|
-      case l.to_i
-      when 9
-        '---ooo---'
-      when 8
-        '---   ---'
-      when 7
-        '---------'
-      when 6
-        '---xxx---'
-      end
-    end 
-    art.each_with_index { |l,i| puts "#{6-i} : #{l}"}
+      MAP[l.to_i]
+    end
+    art.each_with_index { |l, i| puts "#{6 - i} : #{l}" }
   end
 
   def render_hexagram(hexagram)
@@ -38,18 +36,16 @@ class HexagramRenderer
     puts
   end
 
+  CASTMAP = {
+    9 => 1,
+    8 => 0,
+    7 => 1,
+    6 => 0
+  }
+
   def make_binary_string(hexagram)
     hexagram.map do |l|
-      case l.to_i
-      when 9
-        1
-      when 8
-        0
-      when 7
-        1
-      when 6
-        0
-      end
+      CASTMAP[l.to_i]
     end.reverse
   end
 end
