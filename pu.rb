@@ -10,8 +10,8 @@ get '/' do
   erb :index
 end
 
-get '/cast/:seed' do
-  seed = params['seed'].gsub('-','').to_i.tap{|x| pp x }
+get '/cast/' do
+  seed = Time.now.to_i
   load 'iching.rb'
   markdown(
     Iching.new.cast(
