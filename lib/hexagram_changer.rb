@@ -1,16 +1,13 @@
 class HexagramChanger
+  MAP={
+    9 => 8,
+    8 => 8,
+    7 => 7,
+    6 => 7
+  }
   def do(hexagram)
     hexagram.map do |l|
-      case l
-      when 9
-        8
-      when 8
-        8
-      when 7
-        7
-      when 6
-        7
-      end
+      MAP[l]
     end
   end
 end
