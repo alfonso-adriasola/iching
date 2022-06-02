@@ -6,3 +6,6 @@ gem 'minitest'
 gem 'rake'
 gem 'kramdown'
 gem 'sinatra'
+
+gem 'webrick'
+
