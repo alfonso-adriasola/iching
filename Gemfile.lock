@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    kramdown (2.3.2)
+    kramdown (2.4.0)
       rexml
     minitest (5.15.0)
     mustermann (1.1.1)
@@ -29,4 +29,4 @@ DEPENDENCIES
   sinatra
 
 BUNDLED WITH
-   2.2.17
+   2.2.33

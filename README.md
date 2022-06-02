@@ -13,6 +13,6 @@ or run sinatra and provide text web ui
 ```ruby pu.rb -o 0.0.0.0 ```
 
 to run from docker
-```docker run -it --rm --name iching -v "$PWD":/usr/src/myapp -w /usr/src/myapp ruby:2.7.3-slim ruby iching.rb```
+```docker run -it --rm --name iching -v "$PWD":/usr/src/myapp -w /usr/src/myapp ruby:3.0.4-slim ruby iching.rb```
 
-or visit at text-only-iching.herokuapp.com
+or visit at https://text-only-iching.herokuapp.com

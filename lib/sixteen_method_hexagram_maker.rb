@@ -11,7 +11,7 @@ class SixteenMethodHexagramMaker
     marbles += Array.new(3) { :old_yang }
     hexagram = []
     6.times do
-      throw = marbles[Random.new.random_number(15)]
+      throw = marbles[SecureRandom.random_number(15)]
       hexagram << throw
     end
     hexagram.map { |e| MAP[e] }
