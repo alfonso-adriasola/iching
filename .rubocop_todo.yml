@@ -22,10 +22,7 @@ Metrics/MethodLength:
 
 # Offense count: 6
 Style/Documentation:
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'lib/**/*'
+  Enabled: false
 
 # Offense count: 1
 # Cop supports --auto-correct.

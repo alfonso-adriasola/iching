@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'securerandom'
 class SixteenMethodHexagramMaker
   MAP = { old_yin: 6, young_yang: 7, young_yin: 8, old_yang: 9 }.freeze

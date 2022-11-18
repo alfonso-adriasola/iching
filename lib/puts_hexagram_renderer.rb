@@ -1,4 +1,6 @@
-require_relative './hexagram_renderer.rb'
+# frozen_string_literal: true
+
+require_relative './hexagram_renderer'
 class PutsHexagramRenderer < HexagramRenderer
   def self.out(reading1, reading2)
     reading1.flush
@@ -13,6 +15,6 @@ class PutsHexagramRenderer < HexagramRenderer
       end
     end
     puts
-    STDOUT.flush
+    $stdout.flush
   end
 end

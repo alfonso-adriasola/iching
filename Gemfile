@@ -1,11 +1,12 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
-ruby "3.0.4"
+ruby '3.0.4'
 
+gem 'kramdown'
 gem 'minitest'
 gem 'rake'
-gem 'kramdown'
 gem 'sinatra'
 
 gem 'webrick'
-

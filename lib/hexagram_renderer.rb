@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class HexagramRenderer
   def do(hexagram: [], first: true)
     make_line_art(hexagram) if first
@@ -12,7 +14,7 @@ class HexagramRenderer
       8 => '---   ---',
       7 => '---------',
       6 => '---xxx---'
-    }
+    }.freeze
 
   def make_line_art(hexagram)
     art = hexagram.reverse.map do |l|
@@ -41,7 +43,7 @@ class HexagramRenderer
     8 => 0,
     7 => 1,
     6 => 0
-  }
+  }.freeze
 
   def make_binary_string(hexagram)
     hexagram.map do |l|

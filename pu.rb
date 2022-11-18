@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 # pu.rb
 require 'sinatra'
-ENV['WEB'] = '1'
 
 configure do
   set :lock, true
@@ -17,6 +18,7 @@ get '/cast/' do
     Iching.new.cast(
       renderer: HtmlHexagramRenderer,
       seed: seed
-    ), layout_engine: :erb
+    ),
+    layout_engine: :erb
   )
 end
