@@ -12,13 +12,9 @@ get '/' do
 end
 
 get '/cast/' do
-  seed = Time.now.to_i
   load 'iching.rb'
   markdown(
-    Iching.new.cast(
-      renderer: HtmlHexagramRenderer,
-      seed: seed
-    ),
+    Iching.new.cast(renderer: HtmlHexagramRenderer),
     layout_engine: :erb
   )
 end

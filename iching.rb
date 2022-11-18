@@ -6,10 +6,9 @@ class Iching
   def cast(
     maker: SixteenMethodHexagramMaker,
     changer: HexagramChanger,
-    renderer: PutsHexagramRenderer,
-    seed: 0.39185
+    renderer: PutsHexagramRenderer
   )
-    hexagram = maker.new.do(seed: seed)
+    hexagram = maker.new.do
     hexagram2 = changer.new.do hexagram
 
     reading1 = renderer.new.do hexagram: hexagram
