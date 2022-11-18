@@ -2,7 +2,7 @@
 
 require_relative './hexagram_renderer'
 class PutsHexagramRenderer < HexagramRenderer
-  def self.out(reading1, reading2)
+  def self.out(reading1, reading2 = nil)
     reading1.flush
     reading2&.flush
   end

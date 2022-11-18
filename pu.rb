@@ -14,7 +14,7 @@ end
 get '/cast/' do
   load 'iching.rb'
   markdown(
-    Iching.new.cast(renderer: HtmlHexagramRenderer),
+    Iching.cast(renderer: HtmlHexagramRenderer),
     layout_engine: :erb
   )
 end

@@ -4,7 +4,7 @@ require_relative 'test_helper'
 require_relative '../iching'
 describe Iching do
   before do
-    @iching = Iching.new
+    @iching = Iching
   end
 
   describe 'casting' do

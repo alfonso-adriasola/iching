@@ -7,8 +7,13 @@ class HexagramChanger
     7 => 7,
     6 => 7
   }.freeze
-  def do(hexagram)
-    hexagram.map do |l|
+
+  def initialize(hexagram)
+    @hexagram = hexagram
+  end
+
+  def do
+    @hexagram.map do |l|
       MAP[l]
     end
   end
