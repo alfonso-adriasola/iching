@@ -11,11 +11,11 @@ class SixteenMethodHexagramMaker
     marbles += Array.new(5) { :young_yang }
     marbles += Array.new(7) { :young_yin }
     marbles += Array.new(3) { :old_yang }
-    hexagram = []
+    lines = []
     6.times do
       throw = marbles[SecureRandom.random_number(15)]
-      hexagram << throw
+      lines << throw
     end
-    hexagram.map { |e| MAP[e] }
+    Hexagram.new(lines.map { |e| MAP[e] })
   end
 end

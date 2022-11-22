@@ -10,7 +10,7 @@ describe HtmlHexagramRenderer do
 
   describe 'when asked to render' do
     it 'can given a good hex' do
-      hexagram = [9, 9, 9, 9, 9, 9]
+      hexagram = Hexagram.new [9, 9, 9, 9, 9, 9]
       expected = [
         '<pre>---ooo--- 6</pre>',
         '<pre>---ooo--- 5</pre>',
@@ -19,11 +19,11 @@ describe HtmlHexagramRenderer do
         '<pre>---ooo--- 2</pre>',
         '<pre>---ooo--- 1</pre>'
       ]
-      expect(@renderer.make_line_art(hexagram)).must_equal expected
+      expect(@renderer.changing_art(hexagram)).must_equal expected
     end
 
     it 'can given a mixed hex' do
-      hexagram = [7, 9, 7, 7, 7, 7]
+      hexagram = Hexagram.new [7, 9, 7, 7, 7, 7]
       expected = [
         '<pre>--------- 6</pre>',
         '<pre>--------- 5</pre>',
@@ -32,7 +32,7 @@ describe HtmlHexagramRenderer do
         '<pre>---ooo--- 2</pre>',
         '<pre>--------- 1</pre>'
       ]
-      _(@renderer.make_line_art(hexagram)).must_equal expected
+      _(@renderer.changing_art(hexagram)).must_equal expected
     end
   end
 end

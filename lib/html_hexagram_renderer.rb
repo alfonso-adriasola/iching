@@ -5,14 +5,14 @@ require_relative './hexagram_renderer'
 class HtmlHexagramRenderer < HexagramRenderer
   def do(hexagram: [], first: true)
     out = []
-    out += make_line_art(hexagram) if first
+    out += changing_art(hexagram) if first
     out += render_hexagram(hexagram)
     out.join("\n")
   end
 
-  def make_line_art(hexagram = Array.new(7, 7))
+  def changing_art(hexagram = Hexagram.new(Array.new(7, 7)))
     i = -1
-    hexagram.reverse.map do |l|
+    hexagram.lines.reverse.map do |l|
       line = '<pre>'
       line << MAP[l]
       i += 1

@@ -1,13 +1,6 @@
 # frozen_string_literal: true
 
 class HexagramRenderer
-  def do(hexagram: [], first: true)
-    make_line_art(hexagram) if first
-    render_hexagram(hexagram)
-  end
-
-  def self.out(reading1, reading2) end
-
   MAP =
     {
       9 => '---ooo---',
@@ -16,8 +9,15 @@ class HexagramRenderer
       6 => '---xxx---'
     }.freeze
 
-  def make_line_art(hexagram)
-    art = hexagram.reverse.map do |l|
+  def do(hexagram: Hexagram.new, first: true)
+    changing_art(hexagram) if first
+    render_hexagram(hexagram)
+  end
+
+  def self.out(reading1, reading2) end
+
+  def changing_art(hexagram)
+    art = hexagram.lines.reverse.map do |l|
       MAP[l.to_i]
     end
     art.each_with_index { |l, i| puts "#{6 - i} : #{l}" }
@@ -46,7 +46,7 @@ class HexagramRenderer
   }.freeze
 
   def make_binary_string(hexagram)
-    hexagram.map do |l|
+    hexagram.lines.map do |l|
       CASTMAP[l.to_i]
     end.reverse
   end
