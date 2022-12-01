@@ -16,3 +16,5 @@ to run from docker
 ```docker run -it --rm --name iching -v "$PWD":/usr/src/myapp -w /usr/src/myapp ruby:3.0.4-slim ruby iching.rb```
 
 or visit at https://text-only-iching.herokuapp.com
+
+<a rel="me" href="https://ruby.social/@aadriasola">find me in mastodonn</a>
