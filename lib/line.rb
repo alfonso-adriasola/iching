@@ -8,4 +8,8 @@ class Line
   def to_i
     value.to_i
   end
+
+  def changing?
+    value == 6 or value == 9
+  end
 end
