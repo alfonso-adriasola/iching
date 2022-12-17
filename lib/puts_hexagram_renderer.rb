@@ -3,8 +3,8 @@
 require_relative './hexagram_renderer'
 class PutsHexagramRenderer < HexagramRenderer
   def self.out(reading1, reading2 = nil)
-    reading1.flush
-    reading2&.flush
+    reading1
+    reading2
   end
 
   def render_file(linkaddr)
@@ -15,6 +15,5 @@ class PutsHexagramRenderer < HexagramRenderer
       end
     end
     puts
-    $stdout.flush
   end
 end
