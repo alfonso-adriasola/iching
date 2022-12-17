@@ -14,7 +14,7 @@ class HtmlHexagramRenderer < HexagramRenderer
     i = -1
     hexagram.lines.reverse.map do |l|
       line = '<pre>'
-      line << MAP[l]
+      line << MAP[l.to_i]
       i += 1
       line << " #{6 - i}</pre>"
     end

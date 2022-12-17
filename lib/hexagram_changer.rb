@@ -14,7 +14,7 @@ class HexagramChanger
 
   def do
     newlines = @hexagram.lines.map do |l|
-      MAP[l]
+      MAP[l.to_i]
     end
     Hexagram.new(newlines)
   end

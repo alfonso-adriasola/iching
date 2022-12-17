@@ -2,10 +2,7 @@
 
 require_relative './hexagram_renderer'
 class PutsHexagramRenderer < HexagramRenderer
-  def self.out(reading1, reading2 = nil)
-    reading1
-    reading2
-  end
+  def self.out(_reading1, _reading2 = nil); end
 
   def render_file(linkaddr)
     puts
