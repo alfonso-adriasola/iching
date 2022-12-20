@@ -9,4 +9,8 @@ class Hexagram
   def size
     @lines.size
   end
+
+  def ==(other)
+    other.lines.map(&:to_i) == self.lines.map(&:to_i)
+  end
 end
