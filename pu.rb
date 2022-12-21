@@ -18,3 +18,11 @@ get '/cast/' do
     layout_engine: :erb
   )
 end
+
+get '/look/:hexagram' do |h|
+  load 'iching.rb'
+  markdown(
+    HtmlHexagramRenderer.new.render_from_number(h.to_i),
+    layout_engine: :erb
+  )
+end

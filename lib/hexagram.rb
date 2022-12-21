@@ -1,4 +1,5 @@
 require_relative 'line'
+
 class Hexagram
   attr_accessor :lines
 

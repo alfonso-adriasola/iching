@@ -8,6 +8,14 @@ describe HtmlHexagramRenderer do
     @renderer = HtmlHexagramRenderer.new
   end
 
+  describe "lookup link"  do
+    it "finds a link addr for a numer" do
+      _(@renderer.linkaddress(2)).must_equal [0,0,0,0,0,0]
+      _(@renderer.linkaddress(21)).must_equal [1,0,1,0,0,1]
+      _(@renderer.linkaddress(44)).must_equal [1,1,1,1,1,0]
+    end
+  end
+
   describe 'when asked to render' do
     it 'can given a good hex' do
       hexagram = Hexagram.new [9, 9, 9, 9, 9, 9]
