@@ -25,10 +25,10 @@ class HexagramRenderer
 
   def render_hexagram(hexagram)
     linkaddr = make_binary_string(hexagram)
-    render_file(linkaddr)
+    file_lines(linkaddr)
   end
 
-  def render_file(linkaddr)
+  def file_lines(linkaddr)
     puts
     File.open("#{__dir__}/../hexagrams/#{linkaddr.join}.md", 'r') do |f|
       f.each_line do |line|

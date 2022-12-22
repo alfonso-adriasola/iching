@@ -24,7 +24,7 @@ class HtmlHexagramRenderer < HexagramRenderer
     "#{reading1} \n #{reading2}"
   end
 
-  def render_file(linkaddr)
+  def file_lines(linkaddr)
     lines = []
     File.open("#{__dir__}/../hexagrams/#{linkaddr.join}.md", 'r') do |f|
       f.each_line do |line|
@@ -35,7 +35,7 @@ class HtmlHexagramRenderer < HexagramRenderer
   end
 
   def render_from_number(num)
-    render_file(linkaddress(num)).join("\n")
+    file_lines(linkaddress(num)).join("\n")
   end
 
   def linkaddress(num)
