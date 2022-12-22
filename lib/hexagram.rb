@@ -12,6 +12,6 @@ class Hexagram
   end
 
   def ==(other)
-    other.lines.map(&:to_i) == self.lines.map(&:to_i)
+    other.lines.map(&:to_i) == lines.map(&:to_i)
   end
 end

@@ -27,6 +27,8 @@ Style/Documentation:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+Style/NumericPredicate:
+  Enabled: false
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: AllowAsExpressionSeparator.

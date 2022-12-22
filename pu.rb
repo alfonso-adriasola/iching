@@ -20,6 +20,8 @@ get '/cast/' do
 end
 
 get '/look/:hexagram' do |h|
+  return 'no such thing' unless h.to_i > 0 && h.to_i < 65
+
   load 'iching.rb'
   markdown(
     HtmlHexagramRenderer.new.render_from_number(h.to_i),
