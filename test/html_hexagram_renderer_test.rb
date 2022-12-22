@@ -24,12 +24,12 @@ describe 'when asked to render' do
   it 'can given a good hex' do
     hexagram = Hexagram.new [9, 9, 9, 9, 9, 9]
     expected = [
-      '<pre>---ooo--- 6</pre>',
-      '<pre>---ooo--- 5</pre>',
-      '<pre>---ooo--- 4</pre>',
-      '<pre>---ooo--- 3</pre>',
-      '<pre>---ooo--- 2</pre>',
-      '<pre>---ooo--- 1</pre>'
+      '<pre>███ooo███ 6</pre>',
+      '<pre>███ooo███ 5</pre>',
+      '<pre>███ooo███ 4</pre>',
+      '<pre>███ooo███ 3</pre>',
+      '<pre>███ooo███ 2</pre>',
+      '<pre>███ooo███ 1</pre>'
     ]
     expect(@renderer.changing_art(hexagram)).must_equal expected
   end
@@ -37,12 +37,12 @@ describe 'when asked to render' do
   it 'can given a mixed hex' do
     hexagram = Hexagram.new [7, 9, 7, 7, 7, 7]
     expected = [
-      '<pre>--------- 6</pre>',
-      '<pre>--------- 5</pre>',
-      '<pre>--------- 4</pre>',
-      '<pre>--------- 3</pre>',
-      '<pre>---ooo--- 2</pre>',
-      '<pre>--------- 1</pre>'
+      '<pre>█████████ 6</pre>',
+      '<pre>█████████ 5</pre>',
+      '<pre>█████████ 4</pre>',
+      '<pre>█████████ 3</pre>',
+      '<pre>███ooo███ 2</pre>',
+      '<pre>█████████ 1</pre>'
     ]
     _(@renderer.changing_art(hexagram)).must_equal expected
   end

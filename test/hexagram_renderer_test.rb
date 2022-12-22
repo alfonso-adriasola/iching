@@ -11,26 +11,26 @@ describe HexagramRenderer do
   describe 'when asked to render' do
     it 'can given a good hex' do
       hexagram = Hexagram.new [9, 9, 9, 9, 9, 9]
-      expected = %w[---ooo--- ---ooo--- ---ooo--- ---ooo--- ---ooo--- ---ooo---]
+      expected = %w[███ooo███ ███ooo███ ███ooo███ ███ooo███ ███ooo███ ███ooo███]
       expect(@renderer.changing_art(hexagram)).must_equal expected
     end
 
     it 'can do more kinds of hexes' do
       hexagram = Hexagram.new [6, 6, 6, 6, 6, 6]
-      expected = %w[---xxx--- ---xxx--- ---xxx--- ---xxx--- ---xxx--- ---xxx---]
+      expected = %w[███xxx███ ███xxx███ ███xxx███ ███xxx███ ███xxx███ ███xxx███]
       expect(@renderer.changing_art(hexagram)).must_equal expected
     end
 
     it 'can given a unchanging hex' do
       hexagram = Hexagram.new [7, 7, 7, 7, 7, 7]
-      expected = %w[--------- --------- --------- --------- --------- ---------]
+      expected = %w[█████████ █████████ █████████ █████████ █████████ █████████]
       _(@renderer.changing_art(hexagram)).must_equal expected
     end
 
     it 'can do more kinds of hexes' do
       hexagram = Hexagram.new [8, 8, 8, 8, 8, 8]
-      expected = ['---   ---', '---   ---', '---   ---',
-                  '---   ---', '---   ---', '---   ---']
+      expected = ['███   ███', '███   ███', '███   ███',
+                  '███   ███', '███   ███', '███   ███']
       expect(@renderer.changing_art(hexagram)).must_equal expected
     end
   end

@@ -3,10 +3,10 @@
 class HexagramRenderer
   MAP =
     {
-      9 => '---ooo---',
-      8 => '---   ---',
-      7 => '---------',
-      6 => '---xxx---'
+      9 => '███ooo███',
+      8 => '███   ███',
+      7 => '█████████',
+      6 => '███xxx███'
     }.freeze
 
   def do(hexagram: Hexagram.new, first: true)
