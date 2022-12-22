@@ -7,7 +7,7 @@ class HtmlHexagramRenderer < HexagramRenderer
     out = []
     out += changing_art(hexagram) if first
     out += render_hexagram(hexagram)
-    out.join("\n")
+    out.join("")
   end
 
   def changing_art(hexagram = Hexagram.new(Array.new(7, 7)))
@@ -35,7 +35,7 @@ class HtmlHexagramRenderer < HexagramRenderer
   end
 
   def render_from_number(num)
-    file_lines(linkaddress(num)).join("\n")
+    file_lines(linkaddress(num)).join("")
   end
 
   def linkaddress(num)
