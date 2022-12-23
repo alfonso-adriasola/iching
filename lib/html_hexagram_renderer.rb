@@ -12,12 +12,13 @@ class HtmlHexagramRenderer < HexagramRenderer
 
   def changing_art(hexagram = Hexagram.new(Array.new(7, 7)))
     i = -1
-    hexagram.lines.reverse.map do |l|
-      line = '<pre>'
+    o = hexagram.lines.reverse.map do |l|
+      line = ''
       line << MAP[l.to_i]
       i += 1
-      line << " #{6 - i}</pre>"
+      line << " #{6 - i} \n"
     end
+    ["<pre>"] + o + ["</pre>"]
   end
 
   def self.out(reading1, reading2)
