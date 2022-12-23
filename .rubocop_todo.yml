@@ -41,3 +41,6 @@ Style/Semicolon:
 # URISchemes: http, https
 Metrics/LineLength:
   Max: 120
+
+Metrics/ClassLength:
+  Max: 300

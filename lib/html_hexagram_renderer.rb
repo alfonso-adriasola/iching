@@ -4,10 +4,15 @@ require_relative './hexagram_renderer'
 
 class HtmlHexagramRenderer < HexagramRenderer
   def do(hexagram: Hexagram.new([]), first: true)
-    out = []
-    out += changing_art(hexagram) if first
-    out += render_hexagram(hexagram)
-    out.join("")
+    out = ''
+    out += changing_art(hexagram).join('') if first
+    out += render_hexagram(hexagram).join('')
+    out
+  end
+
+  def render_hexagram(hexagram)
+    linkaddr = make_binary_string(hexagram)
+    file_lines(linkaddr)
   end
 
   def changing_art(hexagram = Hexagram.new(Array.new(7, 7)))
@@ -18,7 +23,7 @@ class HtmlHexagramRenderer < HexagramRenderer
       i += 1
       line << " #{6 - i} \n"
     end
-    ["<pre>"] + o + ["</pre>"]
+    ['<pre>'] + o + ['</pre>']
   end
 
   def self.out(reading1, reading2)
@@ -27,16 +32,20 @@ class HtmlHexagramRenderer < HexagramRenderer
 
   def file_lines(linkaddr)
     lines = []
+    i = 0
+    eol = ''
     File.open("#{__dir__}/../hexagrams/#{linkaddr.join}.md", 'r') do |f|
       f.each_line do |line|
-        lines << line
+        i += 1
+        eol = "\n" if i > 7
+        lines << line + eol
       end
     end
     lines
   end
 
   def render_from_number(num)
-    file_lines(linkaddress(num)).join("")
+    file_lines(linkaddress(num)).join('')
   end
 
   def linkaddress(num)
