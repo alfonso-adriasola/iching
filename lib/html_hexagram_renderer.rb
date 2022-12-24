@@ -35,7 +35,7 @@ class HtmlHexagramRenderer < HexagramRenderer
   end
 
   def render_from_number(num)
-    file_lines(linkaddress(num))
+    "\n" + file_lines(linkaddress(num))
   end
 
   def linkaddress(num)
