@@ -12,7 +12,7 @@ class HtmlHexagramRenderer < HexagramRenderer
 
   def render_hexagram(hexagram)
     linkaddr = make_binary_string(hexagram)
-    "\n" + file_lines(linkaddr)
+    file_lines(linkaddr).join("")
   end
 
   def changing_art(hexagram = Hexagram.new(Array.new(7, 7)))
@@ -31,11 +31,21 @@ class HtmlHexagramRenderer < HexagramRenderer
   end
 
   def file_lines(linkaddr)
-    File.read("#{__dir__}/../hexagrams/#{linkaddr.join}.md")
+    lines = []
+    i = 0
+    File.open("#{__dir__}/../hexagrams/#{linkaddr.join}.md", 'r') do |f|
+      f.each_line do |line|
+        i += 1
+        next if i == 1
+        line[0] == '#' ? prefix = "\n" : prefix = ""
+        lines << (prefix + line)
+      end
+    end
+    lines
   end
 
   def render_from_number(num)
-    "\n" + file_lines(linkaddress(num))
+    file_lines(linkaddress(num)).join("")
   end
 
   def linkaddress(num)
