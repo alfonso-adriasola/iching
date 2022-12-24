@@ -2,7 +2,7 @@
 
 # pu.rb
 require 'sinatra'
-Encoding.default_external = "UTF-8"
+Encoding.default_external = 'UTF-8'
 
 configure do
   set :lock, true
