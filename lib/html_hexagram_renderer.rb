@@ -38,10 +38,11 @@ class HtmlHexagramRenderer < HexagramRenderer
         i += 1
         next if i == 1
         line[0] == '#' ? prefix = "\n" : prefix = ""
-        lines << (prefix + line)
+        line[1] == '>' ? prefix = "\n" : prefix = ""
+        lines << "#{prefix}#{line}#{prefix}"
       end
     end
-    lines
+    lines << "\n"
   end
 
   def render_from_number(num)
