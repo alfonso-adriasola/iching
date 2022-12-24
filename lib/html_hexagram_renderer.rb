@@ -12,7 +12,7 @@ class HtmlHexagramRenderer < HexagramRenderer
 
   def render_hexagram(hexagram)
     linkaddr = make_binary_string(hexagram)
-    file_lines(linkaddr)
+    "\n" + file_lines(linkaddr)
   end
 
   def changing_art(hexagram = Hexagram.new(Array.new(7, 7)))
