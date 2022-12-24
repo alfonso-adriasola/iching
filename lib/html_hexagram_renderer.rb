@@ -32,9 +32,13 @@ class HtmlHexagramRenderer < HexagramRenderer
 
   def file_lines(linkaddr)
     lines = []
+    i = 0
+    eol = ''
     File.open("#{__dir__}/../hexagrams/#{linkaddr.join}.md", 'r') do |f|
       f.each_line do |line|
-        lines << line + "\n"
+        i += 1
+        eol = "\n" if i > 7
+        lines << line + eol
       end
     end
     lines
