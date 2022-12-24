@@ -6,7 +6,7 @@ class HtmlHexagramRenderer < HexagramRenderer
   def do(hexagram: Hexagram.new([]), first: true)
     out = ''
     out += changing_art(hexagram).join('') if first
-    out += render_hexagram(hexagram).join('')
+    out += render_hexagram(hexagram)
     out
   end
 
@@ -31,21 +31,11 @@ class HtmlHexagramRenderer < HexagramRenderer
   end
 
   def file_lines(linkaddr)
-    lines = []
-    i = 0
-    eol = ''
-    File.open("#{__dir__}/../hexagrams/#{linkaddr.join}.md", 'r') do |f|
-      f.each_line do |line|
-        i += 1
-        eol = "\n" if i > 7
-        lines << line + eol
-      end
-    end
-    lines
+    File.read("#{__dir__}/../hexagrams/#{linkaddr.join}.md")
   end
 
   def render_from_number(num)
-    file_lines(linkaddress(num)).join('')
+    file_lines(linkaddress(num))
   end
 
   def linkaddress(num)
