@@ -3,22 +3,23 @@ GEM
   specs:
     kramdown (2.4.0)
       rexml
-    minitest (5.16.2)
+    minitest (5.18.0)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
-    rack (2.2.4)
-    rack-protection (3.0.5)
+    rack (2.2.6.4)
+    rack-protection (3.0.6)
       rack
     rake (13.0.6)
     rexml (3.2.5)
     ruby2_keywords (0.0.5)
-    sinatra (3.0.5)
+    securerandom (0.2.2)
+    sinatra (3.0.6)
       mustermann (~> 3.0)
       rack (~> 2.2, >= 2.2.4)
-      rack-protection (= 3.0.5)
+      rack-protection (= 3.0.6)
       tilt (~> 2.0)
-    tilt (2.0.11)
-    webrick (1.7.0)
+    tilt (2.1.0)
+    webrick (1.8.1)
 
 PLATFORMS
   arm64-darwin-21
@@ -30,11 +31,12 @@ DEPENDENCIES
   kramdown
   minitest
   rake
+  securerandom
   sinatra
   webrick
 
 RUBY VERSION
-   ruby 3.2.0p0
+   ruby 3.2.1p31
 
 BUNDLED WITH
    2.3.15
