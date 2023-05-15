@@ -22,6 +22,7 @@ class SixteenMethodHexagramMaker
   def seedme(seed)
     r = Random.new_seed
     h = seed.chars.map(&:bytes).flatten.sum if seed
-    Random.srand(r + (h || 0))
+    factor = r + (h || 0)
+    Random.srand(factor)
   end
 end

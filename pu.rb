@@ -16,7 +16,7 @@ get '/cast/' do
   seed = params['question']
   load 'iching.rb'
   markdown(
-    Iching.cast(renderer: HtmlHexagramRenderer, seed:),
+    Iching.cast(renderer: HtmlHexagramRenderer, seed: seed),
     layout_engine: :erb
   )
 end
