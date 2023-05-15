@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CoinMethodHexagramMaker
-  def do(_: 0)
+  def do(seed: 0)
     hexagram = Hexagram.new
     6.times do
       throw = Array.new(3) { SecureRandom.random_number(2); sleep(0.2) }
