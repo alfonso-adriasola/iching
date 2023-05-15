@@ -5,6 +5,18 @@ This project is intended to illustrate a creative process,
 
 <h2> Greetings. it is <%= Time.now %> </h2>
 
-<strong> Think and <a href="/cast/">Ask</a> </strong>
+<form id="castblock" style="font-weight: bold">
+  Think and ask
+  <input id="asker" type=text> </input>
+  <button type="submit">Submit</button>
+  </form>
+</form>
+<script>
+  document.getElementById("castblock").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var value = document.getElementById("asker").value;
+    window.location.href = "/cast/?question=" + value;
+  });
+</script>
 
 <a style="display:none" rel="me" href="https://ruby.social/@aadriasola">find me in mastodon</a>

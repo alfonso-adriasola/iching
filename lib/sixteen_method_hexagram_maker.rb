@@ -4,8 +4,8 @@ require 'securerandom'
 class SixteenMethodHexagramMaker
   MAP = { old_yin: 6, young_yang: 7, young_yin: 8, old_yang: 9 }.freeze
 
-  def do
-    Random.srand
+  def do(seed: nil)
+    seedme(seed)
     marbles = []
     marbles += [:old_yin]
     marbles += Array.new(5) { :young_yang }
@@ -17,5 +17,11 @@ class SixteenMethodHexagramMaker
       lines << throw
     end
     Hexagram.new(lines.map { |e| MAP[e] })
+  end
+
+  def seedme(seed)
+    r = Random.new_seed
+    h = seed.chars.map(&:bytes).flatten.sum if seed
+    Random.srand(r + (h || 0))
   end
 end
