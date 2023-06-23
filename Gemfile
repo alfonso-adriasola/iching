@@ -7,7 +7,6 @@ ruby '3.2.2'
 gem 'kramdown'
 gem 'minitest'
 gem 'rake'
-gem 'securerandom'
 gem 'sinatra'
 
 gem 'webrick'
