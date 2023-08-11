@@ -3,21 +3,21 @@ GEM
   specs:
     kramdown (2.4.0)
       rexml
-    minitest (5.18.0)
+    minitest (5.19.0)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
-    rack (2.2.7)
-    rack-protection (3.0.6)
-      rack
+    rack (2.2.8)
+    rack-protection (3.1.0)
+      rack (~> 2.2, >= 2.2.4)
     rake (13.0.6)
-    rexml (3.2.5)
+    rexml (3.2.6)
     ruby2_keywords (0.0.5)
-    sinatra (3.0.6)
+    sinatra (3.1.0)
       mustermann (~> 3.0)
       rack (~> 2.2, >= 2.2.4)
-      rack-protection (= 3.0.6)
+      rack-protection (= 3.1.0)
       tilt (~> 2.0)
-    tilt (2.1.0)
+    tilt (2.2.0)
     webrick (1.8.1)
 
 PLATFORMS
