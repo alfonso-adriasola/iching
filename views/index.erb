@@ -6,19 +6,12 @@ This project is intended to illustrate a creative process,
 <h2> Greetings. it is <%= Time.now %> </h2>
 
 
-<form id="castblock" style="font-weight: bold">
+<form id="castblock" style="font-weight: bold" action="/cast/">
   Think and ask
-  <input id="asker" type=text> </input>
+  <input name="question" id="question" type=text> </input>
   <button type="submit">Submit</button>
   </form>
 </form>
-<script>
-  document.getElementById("castblock").addEventListener("submit", function(event) {
-    event.preventDefault();
-    var value = document.getElementById("asker").value;
-    window.location.href = "/cast/?question=" + value;
-  });
-</script>
 <br/>
 <br/>
 <div style="display: none">
