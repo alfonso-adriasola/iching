@@ -12,13 +12,19 @@ get '/' do
   erb :index
 end
 
-get '/cast/' do
+get '/cast/', provides: 'html' do
   seed = params['question']
   load 'iching.rb'
   markdown(
     Iching.cast(renderer: HtmlHexagramRenderer, seed: seed),
     layout_engine: :erb
   )
+end
+
+get '/cast/', provides: 'json'  do
+  seed = params['question']
+  load 'iching.rb'
+  Iching.cast(renderer: JsonHexagramRenderer, seed: seed).to_json
 end
 
 get '/look/:hexagram' do |h|
