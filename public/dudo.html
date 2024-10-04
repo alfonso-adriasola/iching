@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dice Roll</title>
+    <style>
+        .cup {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .dice-container {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            border: 1px solid white;
+            text-align: center;
+        }
+
+        .dice {
+            width: 92%;
+            height: 92%;
+            position: relative;
+        }
+
+        .dice-spot {
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            position: absolute;
+        }
+
+        button {
+            margin: 0 auto;
+            font-size: larger;
+        }
+
+        .hiding {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+<button onclick="rollCup();"> click to roll </button>
+<button onclick="removeDice();"> remove </button>
+<button onclick="restoreDice();"> restore </button>
+
+<div class="cup">
+    <div id="dice-container1"></div>
+    <div id="dice-container2"></div>
+    <div id="dice-container3"></div>
+    <div id="dice-container4"></div>
+    <div id="dice-container5"></div>
+</div>
+
+<script>
+  function renderDiceRoll(rollNumber) {
+    // Create a container element for the dice
+    const diceContainer = document.createElement('div');
+    diceContainer.classList.add('dice-container');
+
+    // Create a dice element
+    const dice = document.createElement('div');
+    dice.classList.add('dice');
+
+    // Determine the dice spots based on the roll number
+    const diceSpots = [];
+    switch (rollNumber) {
+      case 1:
+        diceSpots.push({x: 50, y: 50});
+        break;
+      case 2:
+        diceSpots.push({x: 25, y: 25});
+        diceSpots.push({x: 75, y: 75});
+        break;
+      case 3:
+        diceSpots.push({x: 25, y: 25});
+        diceSpots.push({x: 50, y: 50});
+        diceSpots.push({x: 75, y: 75});
+        break;
+      case 4:
+        diceSpots.push({x: 25, y: 25});
+        diceSpots.push({x: 75, y: 25});
+        diceSpots.push({x: 25, y: 75});
+        diceSpots.push({x: 75, y: 75});
+        break;
+      case 5:
+        diceSpots.push({x: 25, y: 25});
+        diceSpots.push({x: 75, y: 25});
+        diceSpots.push({x: 25, y: 75});
+        diceSpots.push({x: 75, y: 75});
+        diceSpots.push({x: 50, y: 50});
+        break;
+      case 6:
+        diceSpots.push({x: 25, y: 25});
+        diceSpots.push({x: 75, y: 25});
+        diceSpots.push({x: 25, y: 50});
+        diceSpots.push({x: 75, y: 50});
+        diceSpots.push({x: 25, y: 75});
+        diceSpots.push({x: 75, y: 75});
+        break;
+    }
+
+    // Create dice spot elements and add them to the dice
+    diceSpots.forEach((spot) => {
+      const diceSpot = document.createElement('div');
+      diceSpot.classList.add('dice-spot');
+      diceSpot.style.left = `${spot.x}%`;
+      diceSpot.style.top = `${spot.y}%`;
+      dice.appendChild(diceSpot);
+    });
+
+    // Add the dice to the container and return the container
+    diceContainer.appendChild(dice);
+    return diceContainer;
+  }
+
+  function rollDice(position) {
+    diceElement = document.getElementById('dice-container' + position).firstChild;
+    if (diceElement && diceElement.classList.contains('hiding')) {
+      return
+    }
+    const rollNumber = Math.floor(Math.random() * 6) + 1;
+    const diceContainer = renderDiceRoll(rollNumber);
+    document.getElementById('dice-container' + position).innerHTML = ''; // Clear previous dice
+    document.getElementById('dice-container' + position).appendChild(diceContainer);
+  }
+
+  function removeDice() {
+    diceElements = document.getElementsByClassName('dice-container')
+    for (let i = 0; i < diceElements.length; i++) {
+      if (!diceElements[i].classList.contains('hiding')) {
+        diceElements[i].classList.add('hiding');
+        break
+      }
+    }
+  }
+
+  function restoreDice() {
+    diceElements = document.getElementsByClassName('dice-container')
+    for (let i = 0; i < diceElements.length; i++) {
+      if (diceElements[i].classList.contains('hiding')) {
+        diceElements[i].classList.remove('hiding');
+        break
+      }
+    }
+  }
+
+  function rollCup() {
+    for (let i = 1; i <= 5; i++) {
+      rollDice(i);
+    }
+  }
+</script>
+</body>
+</html>

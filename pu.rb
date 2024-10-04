@@ -36,3 +36,7 @@ get '/look/:hexagram' do |h|
     layout_engine: :erb
   )
 end
+
+get '/dudo/' do
+  File.read('public/dudo.html')
+end
