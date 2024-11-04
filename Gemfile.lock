@@ -13,6 +13,8 @@ GEM
       rack (>= 3.0.0, < 4)
     rack-session (2.0.0)
       rack (>= 3.0.0)
+    rackup (2.2.0)
+      rack (>= 3)
     rake (13.2.1)
     rexml (3.3.9)
     ruby2_keywords (0.0.5)
@@ -34,6 +36,7 @@ PLATFORMS
 DEPENDENCIES
   kramdown
   minitest
+  rackup (~> 2.2)
   rake
   sinatra
   webrick

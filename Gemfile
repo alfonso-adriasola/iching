@@ -10,3 +10,5 @@ gem 'rake'
 gem 'sinatra'
 
 gem 'webrick'
+
+gem "rackup", "~> 2.2"
