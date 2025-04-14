@@ -5,7 +5,7 @@ require_relative './hexagram_renderer'
 class HtmlHexagramRenderer < HexagramRenderer
   def do(hexagram: Hexagram.new([]), first: true)
     out = ''
-    out += hexagram.number if first
+    out += "<h2>#{hexagram.number}</h2>" if first
     out += changing_art(hexagram).join('') << "\n" if first
     out += render_hexagram(hexagram)
     out
