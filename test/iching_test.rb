@@ -13,7 +13,7 @@ describe Iching do
     end
 
     it 'works with other renderer' do
-      @iching.cast(maker: CoinMethodHexagramMaker)
+      @iching.cast(maker: SixteenMethodHexagramMaker)
     end
   end
 end

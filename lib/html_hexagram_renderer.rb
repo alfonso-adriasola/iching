@@ -5,13 +5,14 @@ require_relative './hexagram_renderer'
 class HtmlHexagramRenderer < HexagramRenderer
   def do(hexagram: Hexagram.new([]), first: true)
     out = ''
+    out += hexagram.number if first
     out += changing_art(hexagram).join('') << "\n" if first
     out += render_hexagram(hexagram)
     out
   end
 
   def render_hexagram(hexagram)
-    linkaddr = make_binary_string(hexagram)
+    linkaddr = make_file_string(hexagram)
     file_lines(linkaddr).join('') << "\n"
   end
 

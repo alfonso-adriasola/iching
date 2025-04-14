@@ -5,7 +5,7 @@ require_relative '../lib/hexagram_renderer'
 
 describe HexagramRenderer do
   before do
-    @renderer = HexagramRenderer.new
+    @renderer = PutsHexagramRenderer.new
   end
 
   describe 'when asked to render' do

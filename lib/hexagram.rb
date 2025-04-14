@@ -21,7 +21,7 @@ class Hexagram
       index = 6 - i
       changes << index if l.changing?
     }
-    changes.join('.')
+    changes.reverse.join('.')
   end
 
   CASTMAP = {
