@@ -16,7 +16,8 @@ class SixteenMethodHexagramMaker
       throw = marbles[SecureRandom.random_number(15)]
       lines << throw
     end
-    Hexagram.new(lines.map { |e| MAP[e] })
+    numbers = lines.map { |e| MAP[e] }
+    Hexagram.new(numbers)
   end
 
   def seedme(seed)
